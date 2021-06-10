@@ -1,5 +1,5 @@
-djangorestframework-simplejwt
-django-filter
+djangorestframework-simplejwt==4.7.1
+django-filter==2.4.0
 pytest-django
 requests
 django

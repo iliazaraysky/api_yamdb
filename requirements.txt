@@ -5,7 +5,7 @@
 #    pip-compile --output-file=requirements.txt requirements.in
 #
 django-filter
-djangorestframework-simplejwt
+djangorestframework-simplejwt==4.7.1
 asgiref==3.2.7            # via django
 attrs==19.3.0             # via pytest
 certifi==2020.4.5.1       # via requests
