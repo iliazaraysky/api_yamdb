@@ -1,4 +1,3 @@
-from django.views import generic
 from django.db.models import Avg
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import mixins
@@ -77,6 +76,7 @@ class APIGenresDelete(mixins.DestroyModelMixin, generics.GenericAPIView):
 class APITitles(viewsets.ModelViewSet):
     serializer_class = TitleSerializer
     permission_classes = (IsAdminOrReadOnly, )
-    queryset = Title.objects.annotate(rating=Avg('reviews__score')).order_by('id')
+    queryset = Title.objects.annotate(
+        rating=Avg('reviews__score')).order_by('id')
     filter_backends = [DjangoFilterBackend]
     filterset_class = FilterForTitle
