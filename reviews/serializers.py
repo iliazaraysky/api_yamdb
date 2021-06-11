@@ -15,9 +15,10 @@ class ReviewSerializer(serializers.ModelSerializer):
         fields = ('id', 'text', 'author', 'score', 'pub_date')
 
     def validate(self, attrs):
+        title_id = self.context['view'].kwargs.get('title_id')
         attrs['title'] = get_object_or_404(
             Title,
-            id=self.context['view'].kwargs['title_id']
+            id=title_id
         )
         if not self.partial and Review.objects.filter(
                 title=attrs['title'],

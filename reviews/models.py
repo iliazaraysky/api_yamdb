@@ -30,7 +30,8 @@ class Comment(models.Model):
                                on_delete=models.CASCADE,
                                related_name='comments')
     text = models.TextField('Текст')
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='Автор',
+    author = models.ForeignKey(settings.AUTH_USER_MODEL,
+                               verbose_name='Автор',
                                on_delete=models.CASCADE,
                                related_name='comments')
     pub_date = models.DateTimeField('Дата публикации', auto_now_add=True)
