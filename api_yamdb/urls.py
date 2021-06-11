@@ -26,5 +26,5 @@ urlpatterns = [
         name='redoc'
     ),
     path('api/', include('users.urls')),
-    path('api/v1/titles/', include('reviews.urls', namespace='v1')),
+    path('api/', include('reviews.urls', namespace='v1')),
 ]

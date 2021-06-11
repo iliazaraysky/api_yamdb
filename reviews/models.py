@@ -11,15 +11,18 @@ class Review(models.Model):
                                on_delete=models.CASCADE,
                                related_name='reviews')
     score = models.PositiveSmallIntegerField('Оценка',
-                                             validators=[MinValueValidator(1),
+                                             validators=(MinValueValidator(1),
                                                          MaxValueValidator(
-                                                             10)],
+                                                             10)),
                                              blank=False, null=False)
     pub_date = models.DateTimeField('Дата публикации', auto_now_add=True)
 
     class Meta:
         verbose_name = 'Обзор'
         verbose_name_plural = 'Обзоры'
+
+    def __str__(self):
+        return self.title
 
 
 class Comment(models.Model):
@@ -35,3 +38,6 @@ class Comment(models.Model):
     class Meta:
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Комментарии'
+
+    def __str__(self):
+        return self.text[:15]

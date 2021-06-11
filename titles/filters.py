@@ -11,5 +11,5 @@ class FilterForTitle(rest_framework.FilterSet):
                                       lookup_expr='contains')
 
     class Meta:
-        fields = ['name', 'genre', 'category', 'year']
+        fields = ('name', 'genre', 'category', 'year')
         model = Title

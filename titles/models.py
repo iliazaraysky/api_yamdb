@@ -35,7 +35,7 @@ class Genre(models.Model):
 
 class Title(models.Model):
     name = models.CharField(max_length=200, null=False, blank=False)
-    year = models.IntegerField(verbose_name="Год выпуска")
+    year = models.IntegerField(verbose_name='Год выпуска')
     description = models.CharField(max_length=200, blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE,
                                  related_name='title',
