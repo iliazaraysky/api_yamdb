@@ -18,10 +18,10 @@ class APICategory(mixins.ListModelMixin,
 
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    permission_classes = (IsAdminOrReadOnly, )
+    permission_classes = (IsAdminOrReadOnly,)
     lookup_field = 'slug'
-    filter_backends = (filters.SearchFilter, )
-    search_fields = ('name', )
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('name',)
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
@@ -49,8 +49,8 @@ class APIGenres(mixins.ListModelMixin,
                 generics.GenericAPIView):
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
-    permission_classes = (IsAdminOrReadOnly, )
-    filter_backends = (filters.SearchFilter, )
+    permission_classes = (IsAdminOrReadOnly,)
+    filter_backends = (filters.SearchFilter,)
     search_fields = ('name',)
     lookup_field = 'slug'
 
@@ -65,7 +65,7 @@ class APIGenresDelete(mixins.DestroyModelMixin, generics.GenericAPIView):
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
     permission_classes = (IsAdminOrReadOnly,)
-    filter_backends = (filters.SearchFilter, )
+    filter_backends = (filters.SearchFilter,)
     search_fields = ('name',)
     lookup_field = 'slug'
 
@@ -77,8 +77,8 @@ class APITitles(viewsets.ModelViewSet):
     serializer_class = TitleSerializer
     permission_classes = (IsAdminOrReadOnly, )
     queryset = Title.objects.annotate(rating=Avg('reviews__score'))
-    filter_backends = (DjangoFilterBackend, )
+    filter_backends = (DjangoFilterBackend,)
     filterset_class = FilterForTitle
 
     class Meta:
-        ordering = ('id', )
+        ordering = ('id',)

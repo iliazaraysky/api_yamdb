@@ -18,7 +18,8 @@ urlpatterns = [
          CommentListAPIView.as_view(),
          name='comments_list'),
 
-    path(
-        'v1/titles/<int:title_id>/reviews/<int:review_id>/comments/<int:comment_id>/',
-        CommentDetailAPIView.as_view(), name='comments_detail'),
+    path('v1/titles/<int:title_id>/'
+         'reviews/<int:review_id>/'
+         'comments/<int:comment_id>/',
+         CommentDetailAPIView.as_view(), name='comments_detail'),
 ]

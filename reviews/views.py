@@ -9,7 +9,7 @@ from .serializers import ReviewSerializer, CommentSerializer
 
 
 class ReviewListAPIView(ListCreateAPIView):
-    permission_classes = (IsAuthenticatedOrReadOnly, )
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     serializer_class = ReviewSerializer
     queryset = Review.objects.all()
 
@@ -35,7 +35,7 @@ class ReviewDetailAPIView(RetrieveUpdateDestroyAPIView):
 
 
 class CommentListAPIView(ListCreateAPIView):
-    permission_classes = (IsAuthenticatedOrReadOnly, )
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     serializer_class = CommentSerializer
     queryset = Comment.objects.all()
 
