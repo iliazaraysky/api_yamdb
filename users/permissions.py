@@ -19,9 +19,10 @@ class IsAuthor(permissions.BasePermission):
             return True
         elif request.user.is_authenticated and obj.author == request.user:
             return True
-        elif request.user.is_authenticated and request.user.is_moderator:
+        elif request.user and request.user.is_moderator:
             return True
-        elif request.user.is_authenticated and request.user.is_admin:
+        elif request.user and request.user.is_admin:
             return True
-        elif request.user.is_authenticated and request.user.is_superuser:
+        elif request.user and request.user.is_superuser:
             return True
+        return False

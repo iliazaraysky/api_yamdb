@@ -69,11 +69,11 @@ class User(AbstractBaseUser):
 
     @property
     def is_admin(self):
-        return self.role == 'admin' or self.is_staff
+        return self.role == self.UserRole.ADMIN or self.is_staff
 
     @property
     def is_moderator(self):
-        return self.role == 'moderator'
+        return self.role == self.UserRole.MODERATOR
 
     def has_perm(self, perm, obj=None):
         return self.is_admin
