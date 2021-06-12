@@ -38,12 +38,16 @@ class RepresentGenre(serializers.SlugRelatedField):
 
 
 class TitleSerializer(serializers.ModelSerializer):
-    category = RepresentCategory(slug_field='slug',
-                                 queryset=Category.objects.all(),
-                                 required=False)
-    genre = RepresentGenre(slug_field='slug',
-                           queryset=Genre.objects.all(),
-                           many=True)
+    category = RepresentCategory(
+        slug_field='slug',
+        queryset=Category.objects.all(),
+        required=False
+    )
+    genre = RepresentGenre(
+        slug_field='slug',
+        queryset=Genre.objects.all(),
+        many=True
+    )
     rating = serializers.IntegerField(read_only=True)
 
     class Meta:
