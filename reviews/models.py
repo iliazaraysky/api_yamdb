@@ -36,7 +36,8 @@ class Review(models.Model):
 
 class Comment(models.Model):
     review = models.ForeignKey(
-        Review, verbose_name='Обзор',
+        Review,
+        verbose_name='Обзор',
         on_delete=models.CASCADE,
         related_name='comments'
     )
