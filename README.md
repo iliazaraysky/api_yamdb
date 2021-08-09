@@ -2,9 +2,24 @@
 Проект YaMDb собирает отзывы (Review) пользователей на произведения (Titles). Произведения делятся на категории: «Книги», «Фильмы», «Музыка». Список категорий (Category) может быть расширен администратором (например, можно добавить категорию «Изобразительное искусство» или «Ювелирка»).
 
 ## Инструкция по установке
-<code>git clone https://github.com/iliazaraysky/api_yamdb.git # Клонируем репозиторий</code>
-<code>cd api_yamdb/ # Переходим в папку с проектом</code>
-<code>python -m venv venv # Устанавливаем отдельное вирткальное окружение для проекта</code>
-<cod>venv\Scripts\activate # Активируем виртуальное окружение</code>
-<code>pip install -r requirements.txt # Устанавливаем модули необходимые для работы проекта</code>
+
+Клонируем репозиторий
+
+<code>git clone https://github.com/iliazaraysky/api_yamdb.git</code>
+
+Переходим в папку с проектом
+
+<code>cd api_yamdb/</code>
+
+Устанавливаем отдельное виртуальное окружение для проекта
+
+<code>python -m venv venv</code>
+
+Активируем виртуальное окружение
+
+<code>venv\Scripts\activate</code>
+
+Устанавливаем модули необходимые для работы проекта
+
+<code>pip install -r requirements.txt</code>
 
