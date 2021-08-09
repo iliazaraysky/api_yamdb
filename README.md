@@ -25,4 +25,5 @@
 
 # Требования
 Python 3.6 +
+
 Работает под ОС Linux, Windows, macOS, BSD
